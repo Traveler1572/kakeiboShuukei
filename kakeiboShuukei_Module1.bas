@@ -16,6 +16,7 @@ Sub kakeibo_shuukei()
     '         2022-10-11    2022年9月分処理追加
     '         2022-11-06    2022年10月分処理追加
     '         2022-12-05    2022年11月分処理追加
+    '         2023-01-01    2022年12月分処理追加
     '----------------------------------------------------------------------
     Dim objWorkbook As Workbook
     Dim i As Integer                'カウンタ用変数
@@ -215,9 +216,11 @@ Sub kakeibo_shuukei()
             objWorkbook.Sheets("月別集計").Range("K10").PasteSpecial Paste:=xlPasteValues
         Workbooks("家計簿(202208～).xlsm").Sheets("月支出").Range("B13").Copy
             objWorkbook.Sheets("月別集計").Range("L10").PasteSpecial Paste:=xlPasteValues
+        Workbooks("家計簿(202208～).xlsm").Sheets("月支出").Range("B14").Copy
+            objWorkbook.Sheets("月別集計").Range("M10").PasteSpecial Paste:=xlPasteValues
             
-                'セルL10に値が入力された時点でループ処理を抜ける
-                If Range("L10").Value = Range("L10").Value Then
+                'セルM10に値が入力された時点でループ処理を抜ける
+                If Range("M10").Value = Range("M10").Value Then
                     Exit For
                 End If
     Next i
